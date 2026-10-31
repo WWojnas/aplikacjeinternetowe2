@@ -5,6 +5,12 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 
+    validation:
+        enabled: true
+        enable_attributes: true
+        mapping:
+            paths:
+                - '%kernel.project_dir%/config/validator/'
     #esi: true
     #fragments: true
 
