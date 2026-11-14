@@ -28,6 +28,7 @@ class LocationRepository extends ServiceEntityRepository
        ;
    }
 
+    
 
    public function findById($id): Location | null
    {
