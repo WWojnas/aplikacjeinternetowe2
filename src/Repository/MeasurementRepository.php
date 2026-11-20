@@ -29,15 +29,13 @@ class MeasurementRepository extends ServiceEntityRepository
     public function findByCountryCity(String $country, String $city)
     {
         $qb = $this->createQueryBuilder('m');
-    
-        $qb->select('m.celsius', 'm.date')
-            ->join('m.location', 'l')
-            ->where('l.city LIKE :city')
-            ->andWhere('l.country LIKE :country')
-            ->andWhere('m.date > CURRENT_TIMESTAMP()')
-            ->setParameter('city', $city)
-            ->setParameter('country', $country);
-    
+        
+        $qb->join('m.location', 'l')
+            ->where('l.country = :country')
+            ->andWhere('l.city = :city')
+            ->setParameter('country', $country)
+            ->setParameter('city', $city);
+        
         return $qb->getQuery()->getResult();
     }
 }

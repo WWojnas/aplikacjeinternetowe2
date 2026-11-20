@@ -64,4 +64,7 @@ class Measurement
 
         return $this;
     }
+    public function getFahrehneit(){
+        return ($this->getCelsius() * 9 / 5) + 32;
+    }
 }

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}weather api csv twig{% endblock %}
+
+{% block body %}
+
+    {% for val in json  %}
+        <div> 
+            <p> {{loop.index}} </p>
+            <p> {{ val.date}}</p>
+            <p> {{ val.celsius }} </p>
+            <p> {{ val.fahrenheit }}</p>
+        </div>
+        <br>
+    {% endfor %}
+
+{% endblock %}
