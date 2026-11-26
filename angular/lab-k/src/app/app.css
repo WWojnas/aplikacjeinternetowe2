@@ -1,0 +1,18 @@
+header{
+    width: 100%;
+    background-color: blue;
+    color:white;
+    margin: 0;
+    padding: 2rem;
+}
+.router-outlet{
+    flex: 1;
+    padding: 2rem;
+}
+footer{
+    width: 100%;
+    background-color: green;
+    color: white;
+    padding: 2rem;
+    
+}

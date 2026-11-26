@@ -1,0 +1,12 @@
+dl {
+    display: block;
+    margin: 1em 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 20px;
+}

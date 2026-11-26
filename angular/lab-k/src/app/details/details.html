@@ -1,0 +1,35 @@
+<div>
+    <div>
+        <a [routerLink]="['/']">&laquo; back </a>
+    </div>
+
+    @if (person){
+        <div class="person">
+            <h2> {{person.firstName}} {{person.lastName}} </h2>
+            <dl class="info">
+                <dt> ID </dt>
+                <dd> {{ id }}</dd>
+                <dt> Age: </dt>
+                <dd> {{person.age}}</dd>
+            </dl>
+
+            @if(person.address){
+                <dl class="address">
+                    <dt>City:</dt>
+                    <dd> {{person.address.city}}</dd>
+
+                    <dt>Street:</dt>
+                    <dd> {{person.address.street}}</dd>
+
+                    <dt>Postcode: </dt>
+                    <dd> {{person.address.postCode}}</dd>
+
+                </dl>
+            }@else{
+                <div class="alert">
+                    person not found
+                </div>
+            }
+        </div>
+    }
+</div>

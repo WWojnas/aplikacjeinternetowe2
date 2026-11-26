@@ -1,0 +1,10 @@
+<ul>
+    @for (person of people; track i; let i = $index){
+        <li>
+            <a [routerLink] = "['/details',i]">
+                {{person.firstName}} {{person.lastName}} {{i}}
+            </a>
+            <button style="border: 1px red solid; border-radius: 10px; color: red; background-color: transparent; padding:0.25rem" (click)="delete(i)"> remove</button>
+        </li>
+    }
+</ul>
