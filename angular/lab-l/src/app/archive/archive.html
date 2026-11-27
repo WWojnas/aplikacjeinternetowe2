@@ -1,0 +1,21 @@
+<h1>Archive</h1>
+
+<div class="container">
+    <div class="tasks">
+        @for (task of tasks; track task.id){
+            <div class="task">
+                <div class="title">{{ task.title }}</div>
+                
+                <div class="deadline">
+                    @if (task.deadline) {
+                        <span>{{ task.deadline }}</span>
+                    }
+                </div>
+                
+                <div class="actions">
+                    <button (click)="deleteTask(task)" type="button">Delete</button>
+                </div>
+            </div>
+            }
+    </div>
+</div>

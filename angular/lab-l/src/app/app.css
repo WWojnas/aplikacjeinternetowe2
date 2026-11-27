@@ -1,0 +1,22 @@
+main{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+}
+
+header{
+    background-color: blue;
+    color: white;
+}
+
+content{
+    flex: 1;
+    min-height: 100vh;
+}
+
+footer{
+    background-color: green;
+    color: white;
+}

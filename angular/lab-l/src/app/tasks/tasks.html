@@ -1,0 +1,47 @@
+<h1> Tasks</h1>
+<div class="container">
+    <form class="new-task">
+        <label>
+            Title
+        </label>
+        <input type="text" name="title" [(ngModel)]="newTask.title" class="form-control" [disabled]="isProcessing" />
+        <label>
+            Deadline
+        </label>
+        <input type="date" name="deadline" [(ngModel)]="newTask.deadline" class="form-control" [disabled]="isProcessing"/>
+        <button type="button" (click)="addTask()" [disabled]="isProcessing"> 
+            {{isProcessing ? "Processing..." : "Add Task"}}
+        </button>
+        <button type="button" (click)="archiveCompleted()"> archive completed</button>
+    </form>
+
+    <div class="tasks">
+        @for (task of tasks; track task.id){
+            @if(task.completed){
+            <div class="task completed">
+                <div class="title">{{ task.title }}</div>
+                <div class="deadline">
+                    @if (task.deadline){
+                        <span> {{task.deadline}} </span>
+                    }
+                </div>
+                <div class="actions">
+                    <input type="checkbox" checked (change)="handleChange(task,false)"/>
+                </div>
+            </div>
+            }@else{
+            <div class="task notcompleted">
+                <div class="title">{{ task.title }}</div>
+                <div class="deadline">
+                    @if (task.deadline){
+                        <span> {{task.deadline}} </span>
+                    }
+                </div>
+                <div class="actions">
+                    <input type="checkbox" (change)="handleChange(task,true)"/>
+                </div>
+            </div>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Task } from './task';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TasksService {
+  url: string = "http://localhost:8000/todos"
+  constructor(
+    private http: HttpClient,
+  ) {
+  }
+
+  public index(archived = false): Observable<Task[]> {
+    return this.http.get<Task[]>(this.url + "?archived="+archived)
+  }
+
+  public post(task: Task): Observable<Task> {
+    return this.http.post(this.url,task)
+  }
+
+  public put(task: Task): Observable<Task> {
+    console.log(task);
+    return this.http.put(this.url+"/"+task.id,task)
+  }
+
+  public delete(task: Task): Observable<any> {
+    return this.http.delete(this.url+"/"+task.id)
+  }
+}

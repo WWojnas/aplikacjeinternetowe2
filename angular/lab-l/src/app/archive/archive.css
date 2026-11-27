@@ -1,0 +1,22 @@
+.task{
+    padding: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 1rem;
+}
+.new-task{
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 1rem;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: gray;
+    border: 1px solid gray;
+}

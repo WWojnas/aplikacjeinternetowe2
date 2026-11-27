@@ -1,0 +1,26 @@
+{
+  "todos": [
+    {
+      "title": "mibombo",
+      "deadline": "1212-12-12",
+      "completed": false,
+      "archived": false,
+      "id": "z5UOQYq_A_I"
+    },
+    {
+      "title": "again and again",
+      "deadline": "1212-12-12",
+      "completed": false,
+      "archived": false,
+      "id": "eVAZeOSPROg"
+    },
+    {
+      "title": "bombo clat",
+      "deadline": "1111-11-11",
+      "completed": false,
+      "archived": false,
+      "id": "n0rfJfdvU0Y"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
