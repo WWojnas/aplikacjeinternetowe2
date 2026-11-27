@@ -1,0 +1,12 @@
+main{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+}
+
+content{
+    flex: 1;
+    min-height: 100vh;
+}

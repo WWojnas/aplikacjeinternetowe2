@@ -1,0 +1,25 @@
+<h1>Archive</h1>
+
+<div class="container">
+    <div class="tasks">
+        @for (task of tasks; track task.id){
+            <mat-card class="card">            
+                <mat-card-header>
+                    {{task.title}}
+                </mat-card-header>
+                <mat-card-subtitle>
+                        {{task.deadline | date:'yyy-MM-dd'}}
+                </mat-card-subtitle>
+                
+                <mat-card-actions>
+                    <button mat-icon-button
+                            (click)="deleteTask(task)"
+                            type="button"
+                            aria-label="Delete task">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+            }
+    </div>
+</div>

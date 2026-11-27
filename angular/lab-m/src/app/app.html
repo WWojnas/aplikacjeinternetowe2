@@ -1,0 +1,24 @@
+<main>
+  <header>
+    <mat-toolbar>
+      <h1> Backend-based task manager</h1>
+      <div class="spacer"></div>
+      <mat-chip-listbox>
+        <a mat-chip-option routerLink="/tasks" routerLinkActive="active"
+          #rlat="routerLinkActive" [selected]="rlat.isActive">Tasks</a>
+
+          <a mat-chip-option routerLink="/archive" routerLinkActive="active"
+          #rlaa="routerLinkActive" [selected]="rlaa.isActive">Archive</a>
+
+      </mat-chip-listbox>
+    </mat-toolbar>
+  </header>
+  
+  <content>
+    <router-outlet />
+  </content>
+
+  <footer>
+    <h2> Natan Wojnas lab-l</h2>
+  </footer>
+</main>

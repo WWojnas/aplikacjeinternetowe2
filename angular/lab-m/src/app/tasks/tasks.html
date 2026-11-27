@@ -1,0 +1,52 @@
+<h1> tasks </h1>
+<div class="container">
+    <form>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput #title (input)="changeTitle(title.value)" type="text" name="title" [(ngModel)]="newTask.title" class="form-control" [disabled]="isProcessing" />
+            <mat-hint> Enter atleast 1 char</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Deadline</mat-label>
+            <input matInput 
+             name="deadline"
+              [(ngModel)]="newTask.deadline"
+                [(ngModel)] = "newTask.deadline"
+                [matDatepicker]="picker"
+                />
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-hint> date is optional </mat-hint>
+        </mat-form-field>              
+            <button matButton="outlined" type="button" (click)="addTask()" [disabled]="!titleIsNotEmpty"> add task</button>
+            <button matButton="outlined" type="button" (click)="archiveCompleted()" [disabled]="!canArchive"> archive completed</button>
+    </form>
+
+    <div class="tasks">
+        @for (task of tasks; track task.id){
+            @if(task.completed){
+            <mat-card class="card">
+                <mat-card-header>
+                    {{task.title}}
+                </mat-card-header>
+                <mat-card-subtitle>
+                        {{task.deadline | date:'yyy-MM-dd'}}
+                </mat-card-subtitle>
+                <mat-card-actions>
+                    <mat-checkbox type="checkbox" mat-checkbox checked (change)="handleChange(task,false)"/>
+                </mat-card-actions>
+            </mat-card>
+            }@else{
+            <mat-card class="card">
+                <mat-card-header>{{ task.title }}</mat-card-header>
+                <mat-card-subtitle>
+                    {{task.deadline | date:'yyy-MM-dd'}}
+                </mat-card-subtitle>
+                <mat-card-actions>
+                    <mat-checkbox type="checkbox" mat-checkbox (change)="handleChange(task,true)"/>
+                </mat-card-actions>
+            </mat-card>
+            }
+        }
+    </div>
+</div>

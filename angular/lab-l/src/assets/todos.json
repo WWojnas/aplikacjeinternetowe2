@@ -3,14 +3,14 @@
     {
       "title": "mibombo",
       "deadline": "1212-12-12",
-      "completed": false,
-      "archived": false,
+      "completed": true,
+      "archived": true,
       "id": "z5UOQYq_A_I"
     },
     {
       "title": "again and again",
       "deadline": "1212-12-12",
-      "completed": false,
+      "completed": true,
       "archived": false,
       "id": "eVAZeOSPROg"
     },
